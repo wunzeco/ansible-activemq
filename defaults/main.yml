@@ -1,6 +1,9 @@
 ---
-activemq_user:  influxdb
-activemq_group: "{{ influxdb_user }}"
+activemq_user:  activemq
+activemq_group: "{{ activemq_user }}"
+
+activemq_conf_dir: /etc/activemq
+activemq_home_dir: /var/lib/activemq
 
 #############
 ## Package
@@ -9,3 +12,17 @@ activemq_version: '*'                # e.g. 0.13.0 or * for latest
 #################
 ## Configuration
 ##
+
+activemq_no_start: 0
+activemq_dietime: 2
+
+activemq_port: 61616
+activemq_host: "0.0.0.0"
+activemq_transport_connector_uri: "tcp://{{ activemq_host }}:{{ activemq_port }}"
+
+activemq_instances:
+  - name: main
+    enable: true
+    broker_use_jmx: false
+    broker_name: localhost
+

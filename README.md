@@ -3,6 +3,7 @@ activemq
 
 Ansible role to install and configure ActiveMQ.
 
+> *NOTE*: support for RHEL coming soon
 
 ## Example
 
