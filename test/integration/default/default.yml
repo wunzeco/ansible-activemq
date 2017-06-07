@@ -1,0 +1,10 @@
+---
+- name: ActiveMQ play
+  hosts: test-kitchen
+
+  vars:
+    java_package: oracle-java8-installer
+
+  roles:
+    - wunzeco.java
+    - ansible-activemq

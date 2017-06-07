@@ -1,0 +1,6 @@
+---
+
+- name: Install activemq
+  apt: 
+    name:  "activemq={{ activemq_version|default('*') }}"
+    state: present

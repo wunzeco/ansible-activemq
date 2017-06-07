@@ -1,0 +1,11 @@
+---
+activemq_user:  influxdb
+activemq_group: "{{ influxdb_user }}"
+
+#############
+## Package
+activemq_version: '*'                # e.g. 0.13.0 or * for latest
+
+#################
+## Configuration
+##

@@ -1,0 +1,7 @@
+---
+
+- name: ActiveMQ Install
+  include: "install-{{ ansible_os_family|lower }}.yml"
+
+#- name: Start activemq
+#  service: name=activemq enabled=yes state=started
