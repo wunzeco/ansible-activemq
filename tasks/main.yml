@@ -38,5 +38,12 @@
     dest: /etc/default/activemq
     mode: 0644
 
+- name: Ensure correct permission for activemq home dir
+  file:
+    path:  "{{ activemq_home_dir }}"
+    owner: "{{ activemq_user }}"
+    group: root
+    mode:  0755
+
 - name: Start activemq
   service: name=activemq enabled=yes state=started
