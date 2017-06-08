@@ -1,6 +1,0 @@
----
-
-- name: Install activemq
-  yum:
-    name:  "activemq-{{ activemq_version|default('*') }}"
-    state: present
