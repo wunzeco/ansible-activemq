@@ -2,17 +2,24 @@
 activemq_user:  activemq
 activemq_group: "{{ activemq_user }}"
 
-activemq_conf_dir: /etc/activemq
-activemq_home_dir: /var/lib/activemq
+activemq_install_dir: /opt/activemq
+activemq_conf_dir: '{{ activemq_install_dir }}/conf'
+activemq_data_dir: '/var/lib/activemq/data'
+activemq_tmp_dir: '{{ activemq_install_dir }}/tmp'
+
+# activemq enviroment variables
+activemq_opts_memory: '-Xms1G -Xmx1G'
 
 #############
-## Package
-activemq_version: '*'                # e.g. 0.13.0 or * for latest
+## Download Link
+activemq_download_url: http://archive.apache.org/dist/activemq/apache-activemq/5.6.0/apache-activemq-5.6.0-bin.tar.gz
+
 
 #################
 ## Configuration
 ##
 
+activemq_instance_name: activemq
 activemq_no_start: 0
 activemq_dietime: 2
 
@@ -20,9 +27,5 @@ activemq_port: 61616
 activemq_host: "0.0.0.0"
 activemq_transport_connector_uri: "tcp://{{ activemq_host }}:{{ activemq_port }}"
 
-activemq_instances:
-  - name: main
-    enable: true
-    broker_use_jmx: false
-    broker_name: localhost
-
+# jetty settings
+activemq_webconsole_port: 8161
